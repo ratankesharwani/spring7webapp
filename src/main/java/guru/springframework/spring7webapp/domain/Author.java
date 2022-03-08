@@ -1,12 +1,8 @@
 package guru.springframework.spring7webapp.domain;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by jt on 12/22/19.
- */
 @Entity
 public class Author {
 
@@ -14,7 +10,9 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name= "FirstName")
     private String firstName;
+
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
@@ -66,7 +64,6 @@ public class Author {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
                 '}';
     }
 
